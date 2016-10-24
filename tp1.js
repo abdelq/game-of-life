@@ -18,11 +18,11 @@ function newMatrix (rows, cols) {
 
 function changeState (x, y) {
     if (cells[x][y]) {
-        cells[x][y] = 0;
         Grid.colorCell(x, y, 'black');
+        cells[x][y] = 0;
     } else {
-        cells[x][y] = 1;
         Grid.colorCell(x, y, 'darkblue');
+        cells[x][y] = 1;
     }
 };
 
@@ -35,14 +35,28 @@ function randomGrid (percent) {
 };
 
 function resetGrid () {
-    cells = newMatrix(width, height);
     Grid.create(width, height);
+    cells = newMatrix(width, height);
 };
 
 function resizeGrid (newWidth, newHeight) {
     Grid.create(newWidth, newHeight);
 
-    console.log('resizeGrid ' + newWidth + ' ' + newHeight);
+    cells.length = newWidth;
+
+    for (var i = 0; i < cells.length; i += 1) {
+        if (!cells[i])
+            cells[i] = [];
+
+        cells[i].length = newHeight;
+
+        for (var j = 0; j < cells[i].length; j += 1) {
+            if (!cells[i][j])
+                cells[i][j] = 0;
+            else if (cells[i][j] == 1)
+                Grid.colorCell(i, j, 'darkblue');
+        }
+    }
 };
 
 Grid.create(width, height); // Créer la grille initiale
