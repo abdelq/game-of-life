@@ -1,0 +1,29 @@
+body {
+    color: lightgreen;
+    background: black;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+    border: 3px solid green;
+}
+td, th {
+    width: 10px;
+    height: 10px;
+}
+td {
+    border: 1px solid green;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+}
+button, input {
+    border: 1px solid black;
+    height: 30px;
+    padding: 0 5px;
+    background-color: #CCC;
+    text-align: center;
+}
+button:hover, input:hover {
+    background-color: #DDD;
+}

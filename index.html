@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/style.css">
+
+        <title>Conway's Game of Life</title>
+    </head>
+    <body>
+        <div style="text-align: center">
+            <h1>Conway's Game of Life</h1>
+            <!-- <canvas id="grid" width="300" height="300"></canvas> -->
+            <table id="grid"></table>
+            <br /><br />
+            <button id="toggle-play">
+                ▶ Play
+            </button>
+            <button onclick="step()">
+                Step
+            </button>
+            <button onclick="resetGrid()">
+                Reset
+            </button>
+            <button onclick="randomGrid(+$('#random').val())">
+                Random
+            </button>
+            <input id="random" name="random" type="number" min="1" max="99" value="50" style="width: 45px" />%
+            <br /><br />
+            <input id="w" name="width" type="number" value="40" autocomplete="off" /> x <input id="h" name="height" type="number" value="40" autocomplete="off" />
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/gol.js"></script>
+        <script src="tp1.js"></script>
+    </body>
+</html>
