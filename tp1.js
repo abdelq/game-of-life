@@ -17,7 +17,13 @@ function newMatrix (rows, cols) {
 };
 
 function changeState (x, y) {
-    console.log('changeState ' + x + ' ' + y);
+    if (cells[x][y]) {
+        cells[x][y] = 0;
+        Grid.colorCell(x, y, 'black');
+    } else {
+        cells[x][y] = 1;
+        Grid.colorCell(x, y, 'darkblue');
+    }
 };
 
 function step () {
@@ -29,7 +35,8 @@ function randomGrid (percent) {
 };
 
 function resetGrid () {
-    console.log('resetGrid');
+    cells = newMatrix(width, height);
+    Grid.create(width, height);
 };
 
 function resizeGrid (newWidth, newHeight) {
@@ -38,4 +45,4 @@ function resizeGrid (newWidth, newHeight) {
     console.log('resizeGrid ' + newWidth + ' ' + newHeight);
 };
 
-Grid.create(40, 40); // Créer la grille initiale
+Grid.create(width, height); // Créer la grille initiale
