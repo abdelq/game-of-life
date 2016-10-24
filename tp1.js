@@ -16,23 +16,23 @@ function newMatrix (rows, cols) {
     return arr;
 };
 
-var changeState = function(x, y) {
+function changeState (x, y) {
     console.log('changeState ' + x + ' ' + y);
 };
 
-var step = function() {
+function step () {
     console.log('step');
 };
 
-var randomGrid = function(percent) {
+function randomGrid (percent) {
     console.log('randomGrid ' + percent);
 };
 
-var resetGrid = function() {
+function resetGrid () {
     console.log('resetGrid');
 };
 
-var resizeGrid = function(newWidth, newHeight) {
+function resizeGrid (newWidth, newHeight) {
     Grid.create(newWidth, newHeight);
 
     console.log('resizeGrid ' + newWidth + ' ' + newHeight);
